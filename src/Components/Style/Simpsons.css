@@ -1,0 +1,10 @@
+.simpsons {
+    display: flex;
+    column-gap: 20px;
+}
+
+.simpsonInfo {
+    border: 1px solid red;
+    text-align: center;
+    width: 600px;
+}

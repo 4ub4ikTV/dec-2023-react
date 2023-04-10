@@ -1,4 +1,4 @@
-export const results= [
+export const rickAndMortyArr= [
     {
         "id": 1,
         "name": "Rick Sanchez",

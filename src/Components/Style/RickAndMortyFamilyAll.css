@@ -1,0 +1,12 @@
+.rickAndMorty {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 150px;
+    justify-content: space-evenly;
+}
+
+.rickAndMortyInfo {
+    border: 1px solid black;
+    text-align: center;
+
+}
