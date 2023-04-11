@@ -1,4 +1,3 @@
-import './App.css';
 import {Simpsons} from "./Components/SimpsonsFamily/Simpsons/Simpsons";
 import {RickAndMortyAll} from "./Components/RickAndMortyFamily/RickAndMortyAll/RickAndMortyAll";
 
