@@ -7,6 +7,7 @@ function App() {
         <div className="App">
             <Simpsons/>
             <hr/>
+            <hr/>
             <RickAndMortyAll/>
         </div>
     );
