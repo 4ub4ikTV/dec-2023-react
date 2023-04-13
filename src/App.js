@@ -1,7 +1,8 @@
 import './App.css';
-import {Posts} from "./components/Posts/Posts";
-import {FullPosts} from "./components/FullPosts/FullPosts";
+import {Posts} from "./components/AllPosts/Posts/Posts";
+import {FullPosts} from "./components/AllPosts/FullPosts/FullPosts";
 import {useState} from "react";
+import {SpaceX} from "./components/RocketMission/SpaceX/SpaceX";
 
 function App() {
 
@@ -18,6 +19,9 @@ function App() {
             <FullPosts value={chosenPost}/>
 
             <Posts lift={lift}/>
+
+            <SpaceX/>
+
 
         </div>
     );
