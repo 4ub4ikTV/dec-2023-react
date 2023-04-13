@@ -6,7 +6,7 @@ const SpaceXRocket = ({launch}) => {
             <li>
                 <p>Назва місії: {launch.mission_name}</p>
                 <p>Рік запуску: {launch.launch_year}</p>
-                <p>Фото місії: <img src={launch.links.mission_patch_small} alt=""/></p>
+                <p>Фото місії: <img src={launch.links.mission_patch_small} alt="Фото місії"/></p>
             </li>
         </div>
     );
