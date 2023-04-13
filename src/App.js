@@ -1,6 +1,6 @@
 import './App.css';
-import {Posts} from "./Posts/Posts";
-import {FullPosts} from "./FullPosts/FullPosts";
+import {Posts} from "./components/Posts/Posts";
+import {FullPosts} from "./components/FullPosts/FullPosts";
 import {useState} from "react";
 
 function App() {
