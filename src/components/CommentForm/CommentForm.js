@@ -9,6 +9,7 @@ const CommentForm = ({setComments}) => {
     const save = async (comment) => {
         const {data} = await userService.createComment(comment)
         setComments(prev => [...prev, data])
+        reset()
     }
 
     return (
