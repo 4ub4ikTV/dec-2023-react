@@ -18,7 +18,7 @@ const Car = ({car, setUpdateCars, setCarForUpdate}) => {
             <h3>Price - {price}</h3>
             <h3>Year- {year}</h3>
             <button onClick={() => deleteCar(car.id)}>Delete</button>
-            <button onClick={()=> setCarForUpdate(car)}>Update</button>
+            <button onClick={() => setCarForUpdate(car)}>Update</button>
         </div>
     );
 };

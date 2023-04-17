@@ -1,4 +1,4 @@
-import React, {isValidElement, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {userService} from "../../services/user.service";
 import {User} from "../User/User";
 import {UserForm} from "../UserForm/UserForm";
@@ -7,14 +7,14 @@ const Users = () => {
 
     const [users, setUsers] = useState([]);
 
-    useEffect(()=> {
+    useEffect(() => {
         userService.getAllUsers().then(value => value.data).then(value => setUsers(value))
     }, [])
 
     return (
         <div>
             <UserForm setUsers={setUsers}/>
-            {users.map(user=><User key={user.id} user={user}/>)}
+            {users.map(user => <User key={user.id} user={user}/>)}
         </div>
     );
 };
