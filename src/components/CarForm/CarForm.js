@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
-import {carService} from "../servicesCars/car.service";
+import {carService} from "../../services/servicesCars/car.service";
 import {logDOM} from "@testing-library/react";
 
 const CarForm = ({setUpdateCars, carForUpdate}) => {
