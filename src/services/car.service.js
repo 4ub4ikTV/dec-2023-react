@@ -1,5 +1,6 @@
-import {axiosInstance} from "./axios.service";
-import {urls} from "../../configsCar/urls";
+import {urls} from "../configsCar/urls";
+import {axiosInstance} from "./servicesCars/axios.service";
+
 
 const carService = {
     getAllCars: ()=> axiosInstance.get(urls.cars),

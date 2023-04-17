@@ -1,5 +1,6 @@
 import React from 'react';
-import {carService} from "../../services/servicesCars/car.service";
+import {carService} from "../../services/car.service";
+
 
 const Car = ({car, setUpdateCars, setCarForUpdate}) => {
 
