@@ -1,17 +1,11 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {IUser} from "../interfaces/user.interface";
 import {UserForm} from "../components/UserForm/UserForm";
 import {Users} from "../components/Users/Users";
 import {userService} from "../services/user.service";
 
-
-interface IProps {
-
-}
-
-const UsersPage: FC<IProps> = () => {
-
+const UsersPage = () => {
 
     const [users, setUsers] = useState<IUser[]>([]);
 

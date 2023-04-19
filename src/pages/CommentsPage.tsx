@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {IComment} from "../interfaces/comment.interface";
 import {commentService} from "../services/comment.service";
@@ -6,11 +6,7 @@ import {CommentForm} from "../components/CommentForm/CommentForm";
 import {Comments} from "../components/Comments/Comments";
 
 
-interface IProps {
-
-}
-
-const CommentsPage: FC<IProps> = () => {
+const CommentsPage = () => {
 
     const [comments, setComments] = useState<IComment[]>([]);
 

@@ -1,15 +1,12 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {ICar} from "../interfaces/car.interface";
 import {carService} from "../services/car.service";
 import {CarForm} from "../components/CarForm/CarForm";
 import {Cars} from "../components/Cars/Cars";
 
-interface IProps {
 
-}
-
-const CarsPage: FC<IProps> = () => {
+const CarsPage = () => {
 
     const [cars, setCars] = useState<ICar[]>([]);
 
