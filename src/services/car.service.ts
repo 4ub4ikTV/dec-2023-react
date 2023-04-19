@@ -1,8 +1,8 @@
 import {carsAxiosService} from "./axios.service";
 
 import {ICar} from "../interfaces/car.interface";
-import {urls} from "../components/constans/urls";
 import {IRes} from "../types/res.type";
+import {urls} from "../constans/urls";
 
 
 const carService = {

@@ -1,8 +1,7 @@
 import {placeAxiosService} from "./axios.service";
-
-import {urls} from "../components/constans/urls";
 import {IRes} from "../types/res.type";
 import {IUser} from "../interfaces/user.interface";
+import {urls} from "../constans/urls";
 
 const userService = {
     getAllUsers: (): IRes<IUser[]> => placeAxiosService.get(urls.placeAPI.users),

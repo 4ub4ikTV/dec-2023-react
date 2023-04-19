@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {IComment} from "../../interfaces/comment.interface";
 
-const Comment = () => {
+interface IProps {
+    comment: IComment
+}
+
+const Comment: FC<IProps> = ({comment}) => {
+    const {id, name, email, body} = comment;
     return (
         <div>
-            Comment
+            <h3>ID - {id}</h3>
+            <h3>Name - {name}</h3>
+            <h3>Email - {email}</h3>
+            <h3>Body - {body}</h3>
         </div>
     );
 };

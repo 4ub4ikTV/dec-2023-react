@@ -1,0 +1,8 @@
+.car {
+    display: flex;
+}
+
+.btn-car {
+    display: flex;
+    margin: 5px;
+}

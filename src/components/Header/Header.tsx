@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
 
-import './Header.css'
+import '../../style/Header.css'
 import {IUseState} from "../../types/useState.type";
-import {PageEnum} from "../constans/page.enum";
+import {PageEnum} from "../../constans/page.enum";
 
 interface IProps {
     setChoice: IUseState<PageEnum>

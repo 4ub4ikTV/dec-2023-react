@@ -1,9 +1,17 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-const Users = () => {
+import {IUser} from "../../interfaces/user.interface";
+import {User} from "../User/User";
+
+
+interface IProps {
+    users: IUser[]
+}
+
+const Users: FC<IProps> = ({users}) => {
     return (
         <div>
-            Users
+            {users.map(user => <User key={user.id} user={user}/>)}
         </div>
     );
 };
