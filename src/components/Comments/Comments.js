@@ -1,20 +1,18 @@
 import React, {useEffect, useState} from 'react';
-import axios from "axios";
-
-import {comments} from "../../urls/urls";
+import {commentService} from "../../services/comment.service";
 import {Comment} from "../Comment/Comment";
 
 const Comments = () => {
 
-    const [comment, setComment] = useState([]);
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        axios(comments).then(value => value.data).then(value => setComment(value))
+        commentService.getAll().then(value => value.data).then(value => setComments(value))
     }, [])
 
     return (
         <div>
-            {comment.map(comment=><Comment key={comment.id} comment={comment}/>)}
+            {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
         </div>
     );
 };

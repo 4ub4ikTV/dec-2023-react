@@ -1,22 +1,21 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 
 const Comment = ({comment}) => {
-    const {id, name, email, body} = comment;
 
+    const navigate = useNavigate();
+
+    const {id, name, email, body, postId} = comment;
 
     return (
         <div>
-
-            <h3>ID - {id}</h3>
+            <h3>Id - {id}</h3>
             <h3>Name - {name}</h3>
             <h3>Email - {email}</h3>
             <h3>Body - {body}</h3>
-            <Link to={'/posts'}>
-                <button>Details-Post</button>
-            </Link>
-
+            <h3>PostId - {postId}</h3>
+            <button onClick={() => navigate(`${postId}`)}>Details-Post</button>
         </div>
     );
 };

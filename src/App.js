@@ -1,48 +1,28 @@
-import {Link, Route, Routes} from "react-router-dom";
 import React from "react";
+import {Navigate, Route, Routes} from "react-router-dom";
+import {MainLayout} from "./Layouts/MainLayout";
+import {TodosPage} from "./pages/TodosPage/TodosPage";
+import {AlbumsPage} from "./pages/AlbumsPage/AlbumsPage";
+import {CommentsPage} from "./pages/CommentsPage/CommentsPage";
+import {Post} from "./components/Post/Post";
 
-import {Todos} from "./components/Todos/Todos";
-import {Albums} from "./components/Albums/Albums";
-import {Comments} from "./components/Comments/Comments";
-import {DetailsPost} from "./components/DetailsPost/DetailsPost";
-import {Posts} from "./components/Posts/Posts";
+
 
 function App() {
     return (
-        <div>
-            <div className={'menu'}>
-                <h2>Menu</h2>
-                <ul>
-                    <li>
-                        <Link to={'/'}>Home</Link>
-                    </li>
-                    <li>
-                        <Link to={'/todos'}>Todos</Link>
-                    </li>
-                    <li>
-                        <Link to={'/albums'}>Albums</Link>
-                    </li>
-                    <li>
-                        <Link to={'/comments'}>Comments</Link>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h2>View</h2>
-                <Routes>
+        <Routes>
+            <Route path={'/'} element={<MainLayout/>}>
 
-                    <Route path={'/todos'} element={<Todos/>}></Route>
-                    <Route path={'/albums'} element={<Albums/>}></Route>
-                    <Route path={'/comments'} element={<Comments/>}></Route>
-                    <Route path={'/posts'} element={<Posts/>}>
-                        <Route path={':id'} element={<DetailsPost/>}></Route>
-                    </Route>
+                <Route index element={<Navigate to={'todos'}/>}/>
+                <Route path={'todos'} element={<TodosPage/>}/>
+                <Route path={'albums'} element={<AlbumsPage/>}/>
+                <Route path={'comments'} element={<CommentsPage/>}>
+                    <Route path={':postId'} element={<Post/>}/>
+                </Route>
 
-                </Routes>
-            </div>
-        </div>
-    )
-        ;
+            </Route>
+        </Routes>
+    );
 }
 
 export default App;

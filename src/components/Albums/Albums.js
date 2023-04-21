@@ -1,20 +1,18 @@
 import React, {useEffect, useState} from 'react';
-import axios from "axios";
-
-import {albums} from "../../urls/urls";
+import {albumService} from "../../services/album.service";
 import {Album} from "../Album/Album";
 
 const Albums = () => {
 
-    const [album, setAlbum] = useState([]);
+    const [albums, setAlbums] = useState([]);
 
     useEffect(() => {
-        axios(albums).then(value => value.data).then(value => setAlbum(value))
+        albumService.getAll().then(value => value.data).then(value => setAlbums(value))
     }, [])
 
     return (
         <div>
-            {album.map(album => <Album key={album.id} album={album}/>)}
+            {albums.map(album=><Album key={album.id} album={album}/>)}
         </div>
     );
 };

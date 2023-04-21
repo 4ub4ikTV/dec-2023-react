@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Todo = ({todo}) => {
+
     const {id, title} = todo;
+
     return (
         <div>
             <h3>ID - {id}</h3>

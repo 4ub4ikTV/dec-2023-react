@@ -1,21 +1,20 @@
 import React, {useEffect, useState} from 'react';
-import axios from "axios";
 
-import {todos} from "../../urls/urls";
 import {Todo} from "../Todo/Todo";
+import {todoService} from "../../services/todo.service";
 
 
 const Todos = () => {
 
-    const [todo, setTodo] = useState([]);
+    const [todos, setTodos] = useState([]);
 
     useEffect(() => {
-        axios(todos).then(value => value.data).then(value => setTodo(value))
+       todoService.getAll().then(value => value.data).then(value => setTodos(value))
     }, [])
 
     return (
         <div>
-            {todo.map(todo=><Todo key={todo.id} todo={todo}/>)}
+            {todos.map(todo=><Todo key={todo.id} todo={todo}/>)}
         </div>
     );
 };
