@@ -2,18 +2,23 @@ import React, {FC, useEffect, useState} from 'react';
 import {IPost} from "../../interfaces/post.interface";
 import {useParams} from "react-router-dom";
 import {postService} from "../../services/post.service";
+import {useAppLocation} from "../../hooks/router.hooks";
 
 const Post: FC = () => {
 
-    const [post, setPost] = useState<IPost>();
+    const {state} = useAppLocation<IPost>()
 
-    const {postId} = useParams<{postId: string}>();
+    const [post, setPost] = useState<IPost>(null);
+
+    const {postId} = useParams();
 
     useEffect(() => {
         if (postId) {
-            postService.getById(Number(postId)).then(value => value.data).then(value => setPost(value))
+            postService.getById(postId).then(value => value.data).then(value => setPost(value))
+        } else {
+            setPost(state)
         }
-    }, [postId])
+    }, [postId, state])
 
     return (
         <div>

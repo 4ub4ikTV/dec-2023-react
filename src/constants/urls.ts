@@ -7,7 +7,7 @@ const urls = {
     albums: '/albums',
     comments: '/comments',
     posts: {
-        getById: (id:number):string => `${posts}/${id}`
+        getById: (id:string):string => `${posts}/${id}`
     }
 }
 
