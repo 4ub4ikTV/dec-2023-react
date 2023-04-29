@@ -1,3 +1,5 @@
+import {savePosts, saveUsers, setPosts, setUsers, startLoading} from "../actions/actions";
+
 let initState = {
     isLoading: false,
     users: [],
@@ -5,19 +7,19 @@ let initState = {
 };
 const userReducer = (state = initState, action) => {
     switch (action.type) {
-        case 'START_LOADING':
+        case startLoading:
             return {...state, isLoading: true}
 
-        case 'SET_USERS':
+        case setUsers:
             return {...state, isLoading: false, users: [...action.payload]}
 
-        case 'SAVE_USERS':
+        case saveUsers:
             return {...state, users: state.users}
 
-        case 'SET_POSTS':
+        case setPosts:
             return {...state, isLoading: false, posts: [...action.payload]}
 
-        case 'SAVE_POSTS':
+        case savePosts:
             return {...state, posts: state.users}
 
         default:

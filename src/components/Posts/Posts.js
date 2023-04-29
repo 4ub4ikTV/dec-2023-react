@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {postService} from "../../services/post.service";
 import {Post} from "../Post/Post";
+import {setPosts, startLoading} from "../../redux/actions/actions";
 
 const Posts = () => {
 
@@ -9,8 +10,8 @@ const Posts = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch({type: 'START_LOADING'})
-        postService.getAll().then(value => value.data).then(value => dispatch({type: 'SET_POSTS', payload: value}))
+        dispatch({type: startLoading})
+        postService.getAll().then(value => value.data).then(value => dispatch({type: setPosts, payload: value}))
     }, [])
 
     return (

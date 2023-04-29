@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {userService} from "../../services/user.service";
 import {User} from "../User/User";
+import {setUsers, startLoading} from "../../redux/actions/actions";
 
 const Users = () => {
 
@@ -9,8 +10,8 @@ const Users = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch({type: 'START_LOADING'})
-        userService.getAll().then(value => value.data).then(value => dispatch({type: 'SET_USERS', payload: value}))
+        dispatch({type: startLoading})
+        userService.getAll().then(value => value.data).then(value => dispatch({type: setUsers, payload: value}))
     }, [])
 
     return (
