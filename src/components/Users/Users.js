@@ -1,8 +1,9 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {userService} from "../../services";
 import {userActions} from "../../redux";
 import {User} from "../User/User";
+import {UserForm} from "../UserForm/UserForm";
 
 const Users = () => {
 
@@ -10,13 +11,18 @@ const Users = () => {
 
     const {users} = useSelector(state => state.users);
 
-    useEffect(()=>{
+    const [, setUsers] = useState();
+
+    useEffect(() => {
         userService.getAllUsers().then(value => value.data).then(value => dispatch(userActions.setUsers(value)))
     }, [])
 
     return (
         <div>
-            {users.map(user=><User key={user.id} user={user}/>)}
+            <div>
+                <UserForm/>
+            </div>
+            {users.map(user => <User key={user.id} user={user}/>)}
         </div>
     );
 };
