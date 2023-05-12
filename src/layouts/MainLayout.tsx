@@ -1,13 +1,13 @@
 import React, {FC} from 'react';
 import {Outlet} from "react-router-dom";
 
-interface IProps {
+import {Header} from "../components";
 
-}
 
-const MainLayout: FC<IProps> = () => {
+const MainLayout: FC = () => {
     return (
         <div>
+            <Header/>
             <Outlet/>
         </div>
     );
