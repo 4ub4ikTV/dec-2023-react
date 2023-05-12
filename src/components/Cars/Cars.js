@@ -13,7 +13,7 @@ const Cars = () => {
 
     useEffect(() => {
         carService.getAllCars().then(value => value.data).then(value => dispatch(carActions.setCars(value)))
-    }, [trigger])
+    }, [dispatch, trigger])
 
     return (
         <div>
