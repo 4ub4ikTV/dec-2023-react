@@ -1,12 +1,12 @@
-import {axiosInstance} from "./servicesCars";
-import {urls} from "../configs/configsCar";
+import {urls} from "../configs";
+import {axiosService} from "./axios.service";
 
 
 const carService = {
-    getAllCars: () => axiosInstance.get(urls.cars),
-    createCar: (car) => axiosInstance.post(urls.cars, car),
-    updateByIdCar: (id, car) => axiosInstance.put(`${urls.cars}/${id}`, car),
-    deleteCar: (id) => axiosInstance.delete(`${urls.cars}/${id}`)
+    getAllCars: () => axiosService.get(urls.cars),
+    createCar: (car) => axiosService.post(urls.cars, car),
+    updateByIdCar: (id, car) => axiosService.put(`${urls.cars}/${id}`, car),
+    deleteCar: (id) => axiosService.delete(`${urls.cars}/${id}`)
 }
 
 export {

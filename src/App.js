@@ -1,15 +1,13 @@
 import {Navigate, Route, Routes} from "react-router-dom";
 import {MainLayout} from "./layouts";
-import {CarsPage, CommentsPage, UsersPage} from "./pages";
+import {CarsPage} from "./pages";
 
 function App() {
     return (
         <Routes>
             <Route path={'/'} element={<MainLayout/>}>
 
-                <Route index element={<Navigate to={'users'}/>}/>
-                <Route path={'users'} element={<UsersPage/>}/>
-                <Route path={'comments'} element={<CommentsPage/>}/>
+                <Route index element={<Navigate to={'cars'}/>}/>
                 <Route path={'cars'} element={<CarsPage/>}/>
             </Route>
         </Routes>
